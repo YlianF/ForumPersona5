@@ -1,0 +1,56 @@
+body {
+    background-image: url("/media/bg.jpg");
+    text-align: center;
+}
+
+header {
+    padding-top: 7px;
+    margin-bottom: 7px;
+    background-color: white;
+    border : 5px solid black;
+    border-radius: 20px;
+}
+
+.header {
+    display : inline-block;
+    width : 100%;
+}
+
+.logo {
+    margin-left: 200px;
+}
+
+.titre {
+    margin-left : 170px;
+}
+
+.texthead {
+    float : right;
+    margin-right: 200px;
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color : red;
+}
+
+p {
+    color : black;
+}
+
+.imghead {
+    float : left;
+}
+
+.content {
+    width : 50%;
+    height : 500px;
+    display: inline-block;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    border : 5px solid black;
+    border-radius: 20px;
+}
