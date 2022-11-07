@@ -8,20 +8,26 @@
     <div class="reg">
         <h1>Tu veux devenir un voleur fantome ?</h1>
 
+        <br>
         {{ form_start(registrationForm) }}
             {{ form_row(registrationForm.email, {
                 label: 'Nom de code '
             }) }}
+            <br>
             {{ form_row(registrationForm.plainPassword, {
                 label: 'Mot de passe '
             }) }}
+            <br>
             {{ form_row(registrationForm.agreeTerms, {
                 label: 'Accepter le bro code'
             }) }}
-
+            <br>
             <button type="submit" class="btn">Rejoindre !</button>
         {{ form_end(registrationForm) }}
 
+        <br>
+        <br>
+        <p>Tu as déjà un compte ? </p><a href="/login">connecte toi !</a>
     </div>
 </div>
 
