@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles index{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Articles index</h1>
+
+    <table class="tablearticles">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.nom }}</td>
+                <td>{{ article.description }}</td>
+                <td>
+                    <a href="{{ path('app_profile_articles_show', {'id': article.id}) }}">voir</a>
+                    <a href="{{ path('app_profile_articles_edit', {'id': article.id}) }}">modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun articles trouvés</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_profile_articles_new') }}">Créer un article</a>
+</div>
+{% endblock %}
