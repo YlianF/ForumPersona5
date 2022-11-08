@@ -17,7 +17,7 @@ class ProfileArticlesController extends AbstractController
     public function index(ArticlesRepository $articlesRepository): Response
     {
         return $this->render('profile_articles/index.html.twig', [
-            'articles' => $articlesRepository->findAll(),
+            'articles' => $articlesRepository->findBy(['auteur'=>$this->getUser()]),
         ]);
     }
 
@@ -27,6 +27,7 @@ class ProfileArticlesController extends AbstractController
         $article = new Articles();
         $form = $this->createForm(ArticlesType::class, $article);
         $form->handleRequest($request);
+        $article->setAuteur($this->getUser());
 
         if ($form->isSubmitted() && $form->isValid()) {
             $articlesRepository->save($article, true);
