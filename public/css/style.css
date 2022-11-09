@@ -45,7 +45,7 @@ p {
 
 .content {
     width : 50%;
-    height : 500px;
+    height : 800px;
     display: inline-block;
     background-color: white;
     padding: 20px;
@@ -53,4 +53,19 @@ p {
     font-weight: bold;
     border : 5px solid black;
     border-radius: 20px;
+}
+
+th, td, tr {
+    padding: 10px;
+    border-bottom: 3px solid red;
+    text-align: left;
+}
+
+th {
+    width : 300px;
+}
+
+.droite {
+    float : right;
+    margin-right: 10%;
 }

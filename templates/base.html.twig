@@ -20,9 +20,15 @@
         <div class="header">
 
             <div class="texthead">
-                <h2><a href="https://google.com">Ecrire un article    </a><i class="fa-solid fa-pen"></i></h2>
+                <h2><a href="/profile/articles">Ecrire un article    </a><i class="fa-solid fa-pen"></i></h2>
                 <h2><a href="https://google.com">Nous contacter   </a><i class="fa-solid fa-paper-plane"></i></h2>
-                <h2><a href="/login">Se connecter   </a><i class="fa-solid fa-globe"></i></h2>
+
+                {% if app.user %}
+                    <h2><a href="/profile">Mon profil   </a><i class="fa-solid fa-user"></i></h2>
+                {% else %}
+                    <h2><a href="/login">Se connecter   </a><i class="fa-solid fa-globe"></i></h2>
+                {% endif %}
+                
             </div>
 
             <div class="imghead">
@@ -36,4 +42,5 @@
     <body>
         {% block body %}{% endblock %}
     </body>
+
 </html>
