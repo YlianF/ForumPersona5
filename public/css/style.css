@@ -45,10 +45,11 @@ p {
 
 .content {
     width : 50%;
-    height : 800px;
+    height : auto;
     display: inline-block;
     background-color: white;
     padding: 20px;
+    padding-bottom: 60px;
     text-align: center;
     font-weight: bold;
     border : 5px solid black;

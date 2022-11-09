@@ -23,6 +23,9 @@ class Articles
     #[ORM\JoinColumn(nullable: false)]
     private ?User $auteur = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $miniature = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +63,18 @@ class Articles
     public function setAuteur(?User $auteur): self
     {
         $this->auteur = $auteur;
+
+        return $this;
+    }
+
+    public function getMiniature(): ?string
+    {
+        return $this->miniature;
+    }
+
+    public function setMiniature(string $miniature): self
+    {
+        $this->miniature = $miniature;
 
         return $this;
     }

@@ -20,7 +20,7 @@
         <div class="header">
 
             <div class="texthead">
-                <h2><a href="/profile/articles">Ecrire un article    </a><i class="fa-solid fa-pen"></i></h2>
+                <h2><a href="{{ path('app_profile_articles_index') }}">Ecrire un article    </a><i class="fa-solid fa-pen"></i></h2>
                 <h2><a href="https://google.com">Nous contacter   </a><i class="fa-solid fa-paper-plane"></i></h2>
 
                 {% if app.user %}
@@ -32,8 +32,8 @@
             </div>
 
             <div class="imghead">
-                <a href="/home"><img class="logo" src={{asset("media/tyh.png")}} height="200px"></a>
-                <img class="titre" src={{asset("media/titre.png")}} height="200px">
+                <a href="/"><img class="logo" src={{asset("media/tyh.png")}} height="200px"></a>
+                <img class="titre" src={{asset('media/titre.png')}} height="200px">
             </div>
             
         </div>

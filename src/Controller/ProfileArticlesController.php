@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Service\FileUploader;
 use App\Entity\Articles;
 use App\Form\ArticlesType;
 use App\Repository\ArticlesRepository;
@@ -22,14 +23,23 @@ class ProfileArticlesController extends AbstractController
     }
 
     #[Route('/new', name: 'app_profile_articles_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, ArticlesRepository $articlesRepository): Response
+    public function new(Request $request, FileUploader $fileUploader, ArticlesRepository $articlesRepository): Response
     {
+
         $article = new Articles();
         $form = $this->createForm(ArticlesType::class, $article);
         $form->handleRequest($request);
         $article->setAuteur($this->getUser());
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $imageFile = $form->get('image')->getData();
+            if ($imageFile) {
+                $imageFileName = $fileUploader->upload($imageFile);
+                $article->setMiniature($imageFileName);
+            }
+
+
             $articlesRepository->save($article, true);
 
             return $this->redirectToRoute('app_profile_articles_index', [], Response::HTTP_SEE_OTHER);
@@ -50,12 +60,19 @@ class ProfileArticlesController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_profile_articles_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Articles $article, ArticlesRepository $articlesRepository): Response
+    public function edit(Request $request, FileUploader $fileUploader, Articles $article, ArticlesRepository $articlesRepository): Response
     {
         $form = $this->createForm(ArticlesType::class, $article);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $imageFile = $form->get('image')->getData();
+            if ($imageFile) {
+                $imageFileName = $fileUploader->upload($imageFile);
+                $article->setimageFilename($imageFileName);
+            }
+
             $articlesRepository->save($article, true);
 
             return $this->redirectToRoute('app_profile_articles_index', [], Response::HTTP_SEE_OTHER);
