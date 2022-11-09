@@ -70,7 +70,7 @@ class ProfileArticlesController extends AbstractController
             $imageFile = $form->get('image')->getData();
             if ($imageFile) {
                 $imageFileName = $fileUploader->upload($imageFile);
-                $article->setimageFilename($imageFileName);
+                $article->setMiniature($imageFileName);
             }
 
             $articlesRepository->save($article, true);

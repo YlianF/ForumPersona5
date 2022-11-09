@@ -24,16 +24,16 @@
                 <h2><a href="https://google.com">Nous contacter   </a><i class="fa-solid fa-paper-plane"></i></h2>
 
                 {% if app.user %}
-                    <h2><a href="/profile">Mon profil   </a><i class="fa-solid fa-user"></i></h2>
+                    <h2><a href="{{ path('app_profile_show') }}">Mon profil   </a><i class="fa-solid fa-user"></i></h2>
                 {% else %}
-                    <h2><a href="/login">Se connecter   </a><i class="fa-solid fa-globe"></i></h2>
+                    <h2><a href="{{ path('app_login') }}">Se connecter   </a><i class="fa-solid fa-globe"></i></h2>
                 {% endif %}
                 
             </div>
 
             <div class="imghead">
-                <a href="/"><img class="logo" src={{asset("media/tyh.png")}} height="200px"></a>
-                <img class="titre" src={{asset('media/titre.png')}} height="200px">
+                <a href="{{ path('app_home') }}"><img class="logo" src={{asset("media/tyh.png")}} alt="logo menu principal" height="200px"></a>
+                <img class="titre" src={{asset('media/titre.png')}} alt="titre du jeu" height="200px">
             </div>
             
         </div>
