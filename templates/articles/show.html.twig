@@ -4,35 +4,25 @@
 
 {% block body %}
 <div class="content">
-    <h1>Articles</h1>
-
+<div class="art">
+   
+    <h1>{{ article.nom }}</h1>
+    <h3> par {{ article.auteur.email }} </h3>
     
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ article.nom }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ article.description }}</td>
-            </tr>
-            <tr>
-                <th>Miniature</th>
-                <td><img src="{{ asset('uploads/' ~ article.miniature) }}" alt="{{ article.nom|raw|e('html_attr') }}" width="500px" height="auto"></td>
-            </tr>
-            <tr>
-                <th>Auteur</th>
-                <td>{{ article.auteur.email }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <br>
+    <br>
     
+    <img src="{{ asset('uploads/' ~ article.miniature) }}" alt="{{ article.nom|raw|e('html_attr') }}" width="100%" height="auto">
+    
+    <br>
+    <br>
+    
+    <h3>{{ article.description }}</h3>
 
-    <a href="{{ path('app_articles_index') }}">back to list</a>
+    <br>
+    <br>
+
+    <a href="{{ path('app_articles_index') }}">Retour aux articles</a>
+</div>
 </div>
 {% endblock %}

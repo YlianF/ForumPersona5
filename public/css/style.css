@@ -1,51 +1,112 @@
+/*Reset CSS*/
+
+html, body, div, span, applet, object, iframe,
+h4, h5, h6, p, blockquote, pre,
+ abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 body {
     background-image: url("/media/bg4.jpg");
     background-repeat: no-repeat;
     background-color: black;
     text-align: center;
+    margin : 0px;
+}
+
+
+#liste {
+    float: right;
+    width:500px;
+    margin-top: 25px;
+    margin-right: 44%;
+}
+
+#milieu {
+    margin-left: 10px;
+}
+
+.imghead {
+    float: left;
+    margin-left: 18%;
 }
 
 header {
-    padding-top: 7px;
-    margin-bottom: 7px;
     background-color: rgb(72, 72, 72);
-    border : 5px solid rgb(152, 0, 0);
-    border-radius: 20px;
+    border-bottom : 3px solid rgb(152, 0, 0);
+    height: 70px;
+    margin-bottom: 10px;
 }
 
-.header {
-    display : inline-block;
-    width : 100%;
+li {
+	display : inline-block;
+	width : 150px;
+    text-align: center;
+    font-size: 130%;
 }
 
-.logo {
-    margin-left: 200px;
-}
-
-.titre {
-    margin-left : 170px;
-}
-
-.texthead {
-    float : right;
-    margin-right: 200px;
-    margin-top: 20px;
-}
-
-
-
-p, h2, h1, tr, th, td {
+p, h3, h2, h1, tr, th, td {
     color : white;
+    font-family: Tahoma;
+
 }
 
 a {
     text-decoration: none;
-    color : rgb(220, 0, 0);
-}
-
-
-.imghead {
-    float : left;
+    color : red;
+    font-family: Tahoma;
+    
 }
 
 .content {
@@ -57,18 +118,18 @@ a {
     padding-bottom: 60px;
     text-align: center;
     font-weight: bold;
-    border : 5px solid rgb(153, 0, 0);
+    border : 3px solid rgb(153, 0, 0);
     border-radius: 20px;
 }
 
 th, td, tr {
     padding: 10px;
     border-bottom: 3px solid rgb(152, 0, 0);
-    text-align: left;
+    vertical-align: middle;
 }
 
 th {
-    width : 300px;
+    width : 30%;
 }
 
 .droite {
@@ -78,14 +139,39 @@ th {
 
 .article {
     border-radius: 20px;
-    border : 3px solid white;
+    border : 3px solid rgb(152, 0, 0);
     width : 30%;
-    padding-top: 10px;
     padding: 10px;
-    padding-bottom: 0px;
     margin: 5%;
     margin-top:40px;
-    background-color: rgb(110, 0, 0);
+    background-color: black;
     display: inline-block;
     vertical-align: middle ;
+}
+
+
+.form {
+    text-align: left;
+}
+
+.formulaire {
+    display: inline-block;
+    text-align: center;
+}
+
+.art {
+    text-align: left;
+}
+
+footer {
+    background-color: rgb(72, 72, 72);
+    border-top : 3px solid rgb(152, 0, 0);
+    height: 70px;
+    margin-top: 10px;
+}
+
+.imgfooter {
+    margin-top:8px;
+    margin-right:15px;
+    margin-left:15px;
 }

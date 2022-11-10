@@ -16,31 +16,51 @@
         {% endblock %}
     </head>
 
+    
+
+    <body>
     <header>
         <div class="header">
 
+            <div>
+                <a href="{{ path('app_home') }}">
+                    <img class="imghead" src={{asset("media/tyh.png")}} alt="logo menu principal" height="70px">
+                </a>
+            </div>
+            
             <div class="texthead">
-                <h2><a href="{{ path('app_profile_articles_index') }}">Ecrire un article    </a><i class="fa-solid fa-pen"></i></h2>
-                <h2><a href="https://google.com">Nous contacter   </a><i class="fa-solid fa-paper-plane"></i></h2>
+                <ul id="liste">
+                    <a href="{{ path('app_profile_articles_index') }}"><li>Ecrire un article</li></a>
+                    <a href="https://google.com"><li id="milieu">Nous contacter</li></a>
 
-                {% if app.user %}
-                    <h2><a href="{{ path('app_profile_show') }}">Mon profil   </a><i class="fa-solid fa-user"></i></h2>
-                {% else %}
-                    <h2><a href="{{ path('app_login') }}">Se connecter   </a><i class="fa-solid fa-globe"></i></h2>
-                {% endif %}
-                
+                    {% if app.user %}
+                        <a href="{{ path('app_profile_show') }}"><li>Mon profil</li></a>
+                    {% else %}
+                        <a href="{{ path('app_login') }}"><li>Se connecter</li></a>
+                    {% endif %}
+
+                </ul>
             </div>
 
-            <div class="imghead">
-                <a href="{{ path('app_home') }}"><img class="logo" src={{asset("media/tyh.png")}} alt="logo menu principal" height="200px"></a>
-                <img class="titre" src={{asset('media/titre.png')}} alt="titre du jeu" height="200px">
-            </div>
+            
             
         </div>
     </header>
+        {% block body %}
+        
+        {% endblock %}
 
-    <body>
-        {% block body %}{% endblock %}
+        <footer>
+            <a href="https://twitter.com/Atlus_West?s=20&t=zoKaOe4e55Ix_KmVdo1mzg">
+                <img class="imgfooter" src={{asset("media/twt.png")}} alt="logo twitter" height="50px">
+            </a>
+            <a href="https://atlus.com/">
+                <img class="imgfooter" src={{asset("media/atlus.png")}} alt="logo atlus" height="50px">
+            </a>
+            <a href="https://www.instagram.com/atlus_west/?hl=fr">
+                <img class="imgfooter" src={{asset("media/insta.png")}} alt="logo instagram" height="50px">
+            </a>
+        </footer>
     </body>
 
 </html>
