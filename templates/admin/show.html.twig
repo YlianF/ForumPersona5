@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utilisateur{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Utilisateur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Role</th>
+                <td>
+                {% if user.roles == ["ROLE_USER"] %}
+                    <p>utilisateur</p>
+                {% else %}
+                    <p>administrateur</p>
+                {% endif %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <br>
+
+    {{ include('admin/_delete_form.html.twig') }}
+
+    <br>
+
+    <a href="{{ path('app_admin_index') }}">retour à la liste</a>
+
+    
+</div>
+{% endblock %}
