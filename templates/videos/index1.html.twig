@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vidéos{% endblock %}
+
+{% block body %}
+
+<div class="content">
+
+    <h1>Retrouve ici plein de vidéos !</h1>
+    <h3>Speedrun, vidéos marrantes et plus !</h3>
+
+    <p>tu veux en proposer ?</p><a href="{{ path('app_contact') }}">Envoie nous un message !</a>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="video">
+        <h2>Speedrun - WR any% par darkkefka</h2>
+        <iframe
+            width="560" height="315"
+            src="https://www.youtube.com/embed/bIu_f8SbDS0" title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+        <p>T'as 15h de libre la ? parfait ! regarde moi ce speedrun de fou</p>
+    </div>
+
+
+
+    <div class="video">
+        <h2>Cinématique - Makoto et sa moto</h2>
+        <iframe
+            width="560" height="315"
+            src="https://www.youtube.com/embed/5OeO1g8iWvs" title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+        <p>Le début de makoto en voleuse fantôme ! plutôt réussi non ?</p>
+    </div>
+
+    <div class="pages">
+        <ul>
+            <a href="{{ path('app_videos_index1') }}"><li>1</li></a>
+            <a href="{{ path('app_videos_index2') }}"><li>2</li></a>
+        </ul>
+    </div>
+</div>
+{% endblock %}

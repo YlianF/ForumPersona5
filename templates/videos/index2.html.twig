@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vidéos{% endblock %}
+
+{% block body %}
+
+<div class="content">
+
+    <h1>Retrouve ici plein de vidéos !</h1>
+    <h3>Speedrun, vidéos marrantes et plus !</h3>
+
+    <p>tu veux en proposer ?</p><a href="{{ path('app_contact') }}">Envoie nous un message !</a>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="video">
+        <h2>Défis - Finir persona 5 avec seulement Arsène</h2>
+        <iframe
+            width="560" height="315"
+            src="https://www.youtube.com/embed/MRIPE4fdqWY" title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <p>Finir persona 5 en enlevant toute une partie du gameplay, c'est pas facile !</p>
+    </div>
+
+
+
+    <div class="video">
+        <h2>Défis - Peut on finir persona 5 sans entrer dans la Velvet Room ?</h2>
+        <iframe
+            width="560" height="315"
+            src="https://www.youtube.com/embed/TiM3GC7tA2c" title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <p>Je me suis dejà posé des questions bizarre mais celle là est bien au dessus !</p>
+    </div>
+
+    <div class="pages">
+        <ul>
+            <a href="{{ path('app_videos_index1') }}"><li>1</li></a>
+            <a href="{{ path('app_videos_index2') }}"><li>2</li></a>
+        </ul>
+    </div>
+</div>
+{% endblock %}

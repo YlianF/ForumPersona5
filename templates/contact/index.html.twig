@@ -5,8 +5,20 @@
 {% block body %}
 
 <div class="content">
-    <h1>Contactez nous !</h1>
-    {{form(formulaire)}}
+
+    {% if app.user %}
+
+        <h1>Contactez nous !</h1>
+        <h3>Un problème ? une recommendation ? envoie nous ça !</h3>
+        {{form(formulaire)}}
+
+    {% else %}
+
+        <h1>Avant de nous envoyer un message, il faut se connecter !</h1>
+        <a href="{{ path('app_login') }}">connecte toi !</a>
+
+    {% endif %}
+    
 </div>
 
 {% endblock %}
