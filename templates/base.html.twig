@@ -24,14 +24,14 @@
 
             <div>
                 <a href="{{ path('app_home') }}">
-                    <img class="imghead" src={{asset("media/tyh.png")}} alt="logo menu principal" height="70px">
+                    <img class="imghead" src={{asset("media/tyh.png")}} alt="logo menu principal" height="80px">
                 </a>
             </div>
             
             <div class="texthead">
                 <ul id="liste">
                     <a href="{{ path('app_profile_articles_index') }}"><li>Ecrire un article</li></a>
-                    <a href="https://google.com"><li id="milieu">Nous contacter</li></a>
+                    <a href="{{ path('app_contact') }}"><li id="milieu">Nous contacter</li></a>
 
                     {% if app.user %}
                         <a href="{{ path('app_profile_show') }}"><li>Mon profil</li></a>

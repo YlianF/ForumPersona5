@@ -70,7 +70,7 @@ body {
     float: right;
     width:500px;
     margin-top: 25px;
-    margin-right: 44%;
+    margin-right: 43%;
 }
 
 #milieu {
@@ -111,6 +111,7 @@ a {
 
 .content {
     width : 50%;
+    min-height: 501px;
     height : auto;
     display: inline-block;
     background-color:rgb(72, 72, 72);
