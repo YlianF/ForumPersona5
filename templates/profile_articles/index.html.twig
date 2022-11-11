@@ -9,17 +9,17 @@
     <table class="tablearticles">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nom</th>
+                <th>Catégorie</th>
                 <th>Description</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for article in articles %}
             <tr>
-                <td>{{ article.id }}</td>
                 <td>{{ article.nom }}</td>
+                <td>{{ article.categorie }}</td>
                 <td>{{ article.description }}</td>
                 <td>
                     <a href="{{ path('app_profile_articles_show', {'id': article.id}) }}">voir</a>

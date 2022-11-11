@@ -9,21 +9,21 @@
     <table class="tableshow">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
                 <th>Nom</th>
                 <td>{{ article.nom }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ article.description|nl2br}}</td>
             </tr>
             <tr>
                 <th>image</th>
                 <td><img src="{{ asset('uploads/' ~ article.miniature) }}" alt="{{ article.nom|raw|e('html_attr') }}" width="500px" height="auto"></td>
             </tr>
+            <tr>
+                <th>Catégorie</th>
+                <td>{{ article.categorie }}</td>
+            </tr>
+                <th>Description</th>
+                <td>{{ article.description|nl2br}}</td>
+            </tr>
+
         </tbody>
     </table>
 

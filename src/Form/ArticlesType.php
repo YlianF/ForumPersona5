@@ -18,6 +18,7 @@ class ArticlesType extends AbstractType
             ->add('image', FileType::class, [
                 'mapped' => false
             ])
+            ->add('categorie')
         ;
     }
 

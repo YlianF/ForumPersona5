@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Tous les articles !</h1><h1>catégorie "jeu"</h1>
+
+    {% for article in articles %}
+        <div class="article">
+            <a href="{{ path('app_articles_show', {'id': article.id}) }}">
+                <img src="{{ asset('uploads/' ~ article.miniature) }}" alt="{{ article.nom|raw|e('html_attr') }}" width="95%" height="auto">
+                <p>{{ article.nom }}</p>
+                <p>{{ article.auteur.email }}</p>
+            </a>
+        </div>
+    {% else %}
+
+        <td colspan="5">Pas d'articles pour l'instant !</td>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

@@ -26,6 +26,9 @@ class Articles
     #[ORM\Column(length: 255)]
     private ?string $miniature = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $categorie = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +78,18 @@ class Articles
     public function setMiniature(string $miniature): self
     {
         $this->miniature = $miniature;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?string
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(string $categorie): self
+    {
+        $this->categorie = $categorie;
 
         return $this;
     }
