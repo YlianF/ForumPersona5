@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utilisateur{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Article</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ articles.id }}</td>
+            </tr>
+            <tr>
+                <th>Auteur</th>
+                <td>{{ articles.auteur.email }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ articles.nom }}</td>
+            </tr>
+            <tr>
+                <th>Catégorie</th>
+                <td>{{ articles.categorie }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img src="{{ asset('uploads/' ~ articles.miniature) }}" alt="{{ articles.nom|raw|e('html_attr') }}" width="95%" height="auto"></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ articles.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    {{ include('admin/_delete_form_articles.html.twig') }}
+
+    <br>
+
+
+    <br>
+
+    <a href="{{ path('app_admin_index_articles') }}">retour à la liste</a>
+
+    
+</div>
+{% endblock %}
