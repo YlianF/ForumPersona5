@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<div class="content">
+
+    <div class="home">
+        <img src={{asset("media/logogif.gif")}} alt="gif logo voleurs fantomes">
+        <h1>Toutes les catégories :</h1>
+
+        <div class="droite">
+            <a href="{{ path('app_articles_index_jeu') }}">
+                <img src={{asset("media/awakening.gif")}} width="300px" alt="gif joker awakening">
+                <h2>Jeu</h2>
+            </a>
+        </div>
+
+        <a href="{{ path('app_articles_index_personnage') }}">
+            <img src={{asset("media/pt.gif")}} width="300px" alt="gif team complète">
+            <h2>Personnage</h2>
+        </a>
+        
+
+
+        <br>
+        <br>
+
+
+
+        <div class="droite">
+            <a href="{{ path('app_articles_index_fanart') }}">
+                <img src={{asset("media/yusuke.gif")}} width="300px" alt="gif yusuke peinture">
+                <h2>Fan-art</h2>
+            </a>
+        </div>
+
+        <a href="{{ path('app_articles_index_speedrun') }}">
+            <img src={{asset("media/run.gif")}} width="300px" alt="gif morgana">
+            <h2>Speedrun</h2>
+        </a>
+        
+
+
+        <br>
+        <br>
+
+
+
+        <div class="droite">
+            <a href="{{ path('app_articles_index_anime') }}">
+                <img src={{asset("media/anime.gif")}} width="300px" alt="gif anime">
+                <h2>Anime</h2>
+            </a>
+        </div>
+
+        <a href="{{ path('app_articles_index_autres') }}">
+            <img src={{asset("media/pt2.gif")}} width="300px" alt="gif team">
+            <h2>Autres</h2>
+        </a>
+        
+        <br>
+        <br>
+    </div>
+</div>
+{% endblock %}
