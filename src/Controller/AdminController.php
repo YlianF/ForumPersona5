@@ -4,9 +4,12 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Entity\Articles;
+use App\Entity\Contact;
 use App\Form\User1Type;
 use App\Form\Articles1Type;
+use App\Form\ContactType;
 use App\Repository\UserRepository;
+use App\Repository\ContactRepository;
 use App\Repository\ArticlesRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,6 +20,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminController extends AbstractController
 {
 
+    #[Route('/users', name: 'app_admin_index_users', methods: ['GET'])]
+    public function index_users(UserRepository $userRepository): Response
+    {
+        return $this->render('admin/index_users.html.twig', [
+            'users' => $userRepository->findAll(),
+        ]);
+    }
+
     #[Route('/articles', name: 'app_admin_index_articles', methods: ['GET'])]
     public function index_articles(ArticlesRepository $articlesRepository): Response
     {
@@ -25,11 +36,11 @@ class AdminController extends AbstractController
         ]);
     }
 
-    #[Route('/users', name: 'app_admin_index_users', methods: ['GET'])]
-    public function index_users(UserRepository $userRepository): Response
+    #[Route('/contact', name: 'app_admin_index_contact', methods: ['GET'])]
+    public function index_contact(ContactRepository $contactRepository): Response
     {
-        return $this->render('admin/index_users.html.twig', [
-            'users' => $userRepository->findAll(),
+        return $this->render('admin/index_contact.html.twig', [
+            'contact' => $contactRepository->findAll(),
         ]);
     }
 
@@ -61,6 +72,14 @@ class AdminController extends AbstractController
         ]);
     }
 
+    #[Route('/contact/{id}', name: 'app_admin_show_contact', methods: ['GET'])]
+    public function show_contact(Contact $contact): Response
+    {
+        return $this->render('admin/show_contact.html.twig', [
+            'contact' => $contact,
+        ]);
+    }
+
 
 
     // ROUTES DELETE
@@ -82,6 +101,16 @@ class AdminController extends AbstractController
         }
 
         return $this->redirectToRoute('app_admin_index_articles', [], Response::HTTP_SEE_OTHER);
+    }
+
+    #[Route('/contact/{id}', name: 'app_admin_delete_contact', methods: ['POST'])]
+    public function delete_contact(Request $request, Contact $contact, ContactRepository $contactRepository): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$contact->getId(), $request->request->get('_token'))) {
+            $contactRepository->remove($contact, true);
+        }
+
+        return $this->redirectToRoute('app_admin_index_contact', [], Response::HTTP_SEE_OTHER);
     }
 
     
